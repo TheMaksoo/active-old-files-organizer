@@ -1,0 +1,43 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheMaksoo/active-old-files-organizer.git"
+  },
+  "name": "active-old-files-organizer",
+  "displayName": "Active/Old Files Organizer",
+  "description": "Organize workspace files into Active and Old groups in a custom TreeView, with logging.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": ">=1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "activeOldFilesView",
+          "name": "Active/Old Files Organizer"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.70.0",
+    "typescript": "^5.0.0",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {}
+}

@@ -188,14 +188,20 @@ class ActiveOldFilesProvider {
     }
 }
 function activate(context) {
+    console.log('Active/Old Files Organizer extension is activating...');
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (!workspaceFolders) {
         vscode.window.showWarningMessage('Active/Old Files Organizer: No workspace folder open.');
         return;
     }
+    console.log('Workspace folder found:', workspaceFolders[0].uri.fsPath);
     const logger = vscode.window.createOutputChannel(OUTPUT_CHANNEL);
+    logger.appendLine('Extension activated successfully!');
+    logger.show();
     const provider = new ActiveOldFilesProvider(workspaceFolders[0].uri.fsPath, logger);
     vscode.window.registerTreeDataProvider('activeOldFilesView', provider);
+    // Show a notification that the extension is working
+    vscode.window.showInformationMessage('Active/Old Files Organizer extension activated!');
     // Refresh on file save/create/delete
     const watcher = vscode.workspace.createFileSystemWatcher('**/*');
     watcher.onDidChange(() => provider.refresh());

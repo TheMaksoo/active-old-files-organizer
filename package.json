@@ -6,7 +6,7 @@
   "name": "active-old-files-organizer",
   "displayName": "Active/Old Files Organizer",
   "description": "Organize workspace files into Active and Old groups in a custom TreeView, with logging.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": ">=1.70.0"
   },
@@ -22,7 +22,8 @@
       "explorer": [
         {
           "id": "activeOldFilesView",
-          "name": "Active/Old Files Organizer"
+          "name": "Files (Active/Old Organized)",
+          "when": "true"
         }
       ]
     }

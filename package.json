@@ -12,6 +12,7 @@
     "name": "TheMaksoo"
   },
   "license": "MIT",
+  "icon": "icon.png",
   "keywords": [
     "file-organization",
     "productivity",

@@ -6,7 +6,7 @@
   "name": "active-old-files-organizer",
   "displayName": "Active/Old Files Organizer",
   "description": "Automatically organize workspace files into Active and Old groups within your familiar folder structure. Perfect for large projects like Laravel, Vue, React, and more.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "TheMaksoo",
   "author": {
     "name": "TheMaksoo"

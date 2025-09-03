@@ -5,8 +5,24 @@
   },
   "name": "active-old-files-organizer",
   "displayName": "Active/Old Files Organizer",
-  "description": "Organize workspace files into Active and Old groups in a custom TreeView, with logging.",
-  "version": "1.1.0",
+  "description": "Automatically organize workspace files into Active and Old groups within your familiar folder structure. Perfect for large projects like Laravel, Vue, React, and more.",
+  "version": "1.2.0",
+  "publisher": "TheMaksoo",
+  "author": {
+    "name": "TheMaksoo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "file-organization",
+    "productivity",
+    "laravel",
+    "vue",
+    "react",
+    "large-projects",
+    "file-management",
+    "workspace",
+    "explorer"
+  ],
   "engines": {
     "vscode": ">=1.70.0"
   },
@@ -14,7 +30,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -26,13 +42,29 @@
           "when": "true"
         }
       ]
+    },
+    "configuration": {
+      "title": "Active/Old Files Organizer",
+      "properties": {
+        "activeOldOrganizer.activeDays": {
+          "type": "number",
+          "default": 30,
+          "description": "Number of days to consider a file 'active'"
+        },
+        "activeOldOrganizer.minFilesForGrouping": {
+          "type": "number",
+          "default": 5,
+          "description": "Minimum files in a folder before creating Active/Old groups"
+        }
+      }
     }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "package": "vsce package"
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
